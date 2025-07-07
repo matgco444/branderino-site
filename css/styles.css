@@ -449,3 +449,30 @@ section {
     }
 }
 
+/* Responsividade para telas pequenas (celular) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px; /* ajuste conforme o layout desejado */
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p, li, a {
+    font-size: 16px;
+  }
+
+  /* Se tiver classes personalizadas para texto, ajuste aqui também */
+  .headline {
+    font-size: 26px;
+  }
+
+  .subheadline {
+    font-size: 18px;
+  }
+}
