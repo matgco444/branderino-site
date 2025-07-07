@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #2D2D2D;
     color: #F3F3F3;
     line-height: 1.6;
@@ -50,7 +50,7 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(2.2rem, 8vw, 3.5rem); /* Ajustar tamanho da fonte para ser mais responsivo */
+    font-size: clamp(2.2rem, 8vw, 2.2rem); /* Ajustar tamanho da fonte para ser igual ao do mobile */
     font-weight: bold;
     margin-bottom: 15px; /* Reduzir margem */
     line-height: 1.2;
@@ -74,7 +74,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 4vw, 1.6rem); /* Ajustar tamanho da fonte para ser mais responsivo */
+    font-size: clamp(1.1rem, 4vw, 1.1rem); /* Ajustar tamanho da fonte para ser igual ao do mobile */
     font-weight: normal;
     margin-bottom: 25px; /* Reduzir margem */
     opacity: 0.9;
@@ -82,7 +82,7 @@ body {
 }
 
 .hero-description {
-    font-size: clamp(0.95rem, 3vw, 1.1rem); /* Ajustar tamanho da fonte para ser mais responsivo */
+    font-size: clamp(0.95rem, 3vw, 0.95rem); /* Ajustar tamanho da fonte para ser igual ao do mobile */
     max-width: 700px; /* Reduzir largura máxima */
     margin: 0 auto 30px; /* Reduzir margem */
     opacity: 0.8;
