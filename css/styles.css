@@ -1,0 +1,473 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+    background-color: #2D2D2D;
+    color: #F3F3F3;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Reduzir padding para mais compacto */
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2D2D2D; /* Apenas #2D2D2D */
+    z-index: 1000;
+    padding: 10px 0; /* Reduzir padding */
+    transition: all 0.3s ease;
+    text-align: center; /* Centralizar logo */
+}
+
+.logo {
+    height: auto;
+    width: 400px; /* Tamanho para desktop */
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 769px) {
+    .logo {
+        aspect-ratio: 4 / 1; /* Proporção 4:1 para desktop */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 300px; /* Tamanho para mobile */
+        aspect-ratio: 3 / 1; /* Proporção 3:1 para mobile */
+    }
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 90vh; /* Reduzir altura mínima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0 60px; /* Reduzir padding */
+    background-color: #2D2D2D; /* Apenas #2D2D2D */
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem); /* Ajustar tamanho da fonte */
+    font-weight: bold;
+    margin-bottom: 15px; /* Reduzir margem */
+    line-height: 1.2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.highlight {
+    color: #F0E924;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #F0E924;
+    animation: slideIn 1.5s ease-out 0.5s both;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem); /* Ajustar tamanho da fonte */
+    font-weight: normal;
+    margin-bottom: 25px; /* Reduzir margem */
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-description {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem); /* Ajustar tamanho da fonte */
+    max-width: 700px; /* Reduzir largura máxima */
+    margin: 0 auto 30px; /* Reduzir margem */
+    opacity: 0.8;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Botões CTA */
+.cta-button {
+    display: inline-block;
+    background-color: #F0E924;
+    color: #2D2D2D;
+    padding: 15px 35px; /* Ajustar padding */
+    font-size: 1rem; /* Ajustar tamanho da fonte */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(240, 233, 36, 0.3);
+    background-color: #e6d320;
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* Seções */
+section {
+    padding: 60px 0; /* Reduzir padding */
+    background-color: #2D2D2D; /* Apenas #2D2D2D */
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem); /* Ajustar tamanho da fonte */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px; /* Reduzir margem */
+    color: #F0E924;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Ajustar largura */
+    height: 3px;
+    background-color: #F0E924;
+}
+
+/* Target Audience */
+.benefits-list {
+    list-style: none;
+    max-width: 700px; /* Reduzir largura máxima */
+    margin: 0 auto;
+}
+
+.benefits-list li {
+    position: relative;
+    padding: 15px 0 15px 35px; /* Ajustar padding */
+    font-size: 1rem; /* Ajustar tamanho da fonte */
+    border-bottom: 1px solid rgba(243, 243, 243, 0.08); /* Linha mais suave */
+    transition: all 0.3s ease;
+}
+
+.benefits-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 15px; /* Ajustar posição */
+    color: #F0E924;
+    font-size: 1.4rem; /* Ajustar tamanho */
+    font-weight: bold;
+}
+
+.benefits-list li:hover {
+    padding-left: 45px; /* Ajustar padding no hover */
+    color: #F0E924;
+}
+
+/* What You Get */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustar min-width */
+    gap: 30px; /* Reduzir gap */
+    margin-top: 40px; /* Reduzir margem */
+}
+
+.benefit-item {
+    background-color: #2D2D2D;
+    padding: 30px 25px; /* Ajustar padding */
+    border-radius: 10px; /* Ajustar border-radius */
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(243, 243, 243, 0.1); /* Adicionar borda sutil */
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    border-color: #F0E924;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.benefit-item h3 {
+    color: #F0E924;
+    font-size: 1.3rem; /* Ajustar tamanho da fonte */
+    margin-bottom: 15px; /* Reduzir margem */
+    font-weight: bold;
+}
+
+.benefit-item p {
+    font-size: 0.95rem; /* Ajustar tamanho da fonte */
+    opacity: 0.9;
+}
+
+/* Video Section */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Tamanho grande e visível */
+    margin: 0 auto 30px; /* Centralizar */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-section .cta-button {
+    display: block;
+    margin: 20px auto 0 auto; /* Centralizar o botão */
+    text-align: center; /* Centralizar o texto do botão */
+    max-width: 300px; /* Largura controlada */
+}
+.about-text {
+    font-size: 1.1rem; /* Ajustar tamanho da fonte */
+    max-width: 700px; /* Reduzir largura máxima */
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Final CTA */
+.final-cta {
+    background-color: #F0E924; /* Apenas #F0E924 */
+    color: #2D2D2D;
+    text-align: center;
+    padding: 50px 0; /* Reduzir padding */
+}
+
+.cta-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem); /* Ajustar tamanho da fonte */
+    font-weight: bold;
+    margin-bottom: 15px; /* Reduzir margem */
+}
+
+.cta-description {
+    font-size: 1.2rem; /* Ajustar tamanho da fonte */
+    margin-bottom: 30px; /* Reduzir margem */
+    opacity: 0.8;
+}
+
+.final-cta .cta-button {
+    background-color: #2D2D2D;
+    color: #F0E924;
+}
+
+.final-cta .cta-button:hover {
+    background-color: #1a1a1a;
+    box-shadow: 0 8px 25px rgba(45, 45, 45, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: #2D2D2D; /* Apenas #2D2D2D */
+    padding: 30px 0; /* Reduzir padding */
+    border-top: 1px solid rgba(243, 243, 243, 0.05); /* Linha mais suave */
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 200px; /* Garantir que não fiquem muito pequenos */
+}
+
+.footer-left p,
+.footer-center p {
+    margin-bottom: 5px;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end; /* Alinhar à direita */
+    gap: 20px;
+}
+
+.footer-right a {
+    color: #F3F3F3;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-right a:hover {
+    color: #F0E924;
+}
+
+.emoji {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Ajustar translateY */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Reduzir padding ainda mais */
+    }
+    
+    .hero {
+        padding: 80px 0 40px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+        min-width: unset;
+    }
+    
+    .footer-right {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .benefit-item {
+        padding: 25px 15px;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Estados de foco para acessibilidade */
+.cta-button:focus,
+.footer-right a:focus {
+    outline: 2px solid #F0E924;
+    outline-offset: 2px;
+}
+
+/* Otimizações para impressão */
+@media print {
+    .header,
+    .video-section,
+    .final-cta {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
